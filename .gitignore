@@ -1,4 +1,8 @@
 *
+!*.cpp
 !*.c
+!*.hpp
+!*.h
 !Makefile
 !*.txt
+
