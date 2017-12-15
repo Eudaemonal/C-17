@@ -144,8 +144,8 @@ int main(){
 	
 
 	
-	int key = 5;
-	if(search(key)!=nullptr){
+	int key = 3;
+	if(t.search(key)!=nullptr){
 		std::cout << key << " exist!\n";
 	}
 	else{
