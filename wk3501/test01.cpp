@@ -28,7 +28,7 @@ public:
 			root = new Node(e);
 		}
 		else{
-			add(e, root);
+			insert(e, root);
 		}
 	}
 	// Print tree in modes
@@ -57,45 +57,37 @@ public:
 
 private:
 	Node* search(T e, Node* n){
-		if(e < n->elem){
-			if(isNode(n->left)){
+		if(n!=nullptr){
+			if(e == n->elem){
+				return n;
+			}
+			else if(e< n->elem){
 				return search(e, n->left);
 			}
 			else{
-				return nullptr;
-			}
-		}
-		else if(e > n->elem){
-			if(isNode(n->right)){
 				return search(e, n->right);
 			}
-			else{
-				return nullptr;
-			}
 		}
-		else if(e == n->elem){
-			return n;
+		else{
+			return nullptr;
 		}
 	}
 
 	void insert(T e, Node* n){
-		Node* curr = n;
-		if(e < curr->elem){
-			if(isNode(curr->left)){
-				curr = curr->left;
-				insert(e, curr);
+		if(e < n->elem){
+			if(isNode(n->left)){
+				insert(e, n->left);
 			}
 			else{
-				curr->left = new Node(e);
+				n->left = new Node(e);
 			}
 		}
-		else if(e > curr->elem){
-			if(isNode(curr->right)){
-				curr = curr->right;
-				insert(e, curr);
+		else if(e > n->elem){
+			if(isNode(n->right)){
+				insert(e, n->right);
 			}
 			else{
-				curr->right = new Node(e);
+				n->right = new Node(e);
 			}
 		}
 	}
@@ -148,5 +140,5 @@ int main(){
 	t.insert(3);
 	
 	
-	t.print(2);
+	t.print(1);
 }
