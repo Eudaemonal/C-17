@@ -33,7 +33,6 @@ public:
 	}
 	// Print tree in modes
 	void print(int mode){
-
 		switch(mode){
 			case 0: 
 				pre_order(root);
@@ -51,7 +50,8 @@ public:
 					"1 - inorder\n" << 
 					"2 - postorder\n";
 				break;
-		}	
+		}
+		std::cout << "\n";
 	}
 
 
@@ -141,4 +141,16 @@ int main(){
 	
 	
 	t.print(1);
+	
+
+	
+	int key = 5;
+	if(search(key)!=nullptr){
+		std::cout << key << " exist!\n";
+	}
+	else{
+		std::cout << key << " not exist!\n";
+	}
+
+	
 }
