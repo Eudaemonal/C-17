@@ -16,9 +16,13 @@ public:
 
 
 	BTree()=default;
-	
 
 	
+	Node* search(T e){
+		return search(e, root);	
+	}
+
+
 	void insert(T e){
 		if(root == nullptr){
 			root = new Node(e);
@@ -27,36 +31,6 @@ public:
 			add(e, root);
 		}
 	}
-
-	void add(T e, Node* n){
-		Node* curr = n;
-		if(e < curr->elem){
-			if(isNode(curr->left)){
-				curr = curr->left;
-				add(e, curr);
-			}
-			else{
-				curr->left = new Node(e);
-			}
-		}
-		else if(e > curr->elem){
-			if(isNode(curr->right)){
-				curr = curr->right;
-				add(e, curr);
-			}
-			else{
-				curr->right = new Node(e);
-			}
-		}
-	}
-	
-	bool isNode(Node *n){
-		if(n==nullptr)
-			return false;
-		return true;
-	}
-
-
 	// Print tree in modes
 	void print(int mode){
 
@@ -78,6 +52,58 @@ public:
 					"2 - postorder\n";
 				break;
 		}	
+	}
+
+
+private:
+	Node* search(T e, Node* n){
+		if(e < n->elem){
+			if(isNode(n->left)){
+				return search(e, n->left);
+			}
+			else{
+				return nullptr;
+			}
+		}
+		else if(e > n->elem){
+			if(isNode(n->right)){
+				return search(e, n->right);
+			}
+			else{
+				return nullptr;
+			}
+		}
+		else if(e == n->elem){
+			return n;
+		}
+	}
+
+	void insert(T e, Node* n){
+		Node* curr = n;
+		if(e < curr->elem){
+			if(isNode(curr->left)){
+				curr = curr->left;
+				insert(e, curr);
+			}
+			else{
+				curr->left = new Node(e);
+			}
+		}
+		else if(e > curr->elem){
+			if(isNode(curr->right)){
+				curr = curr->right;
+				insert(e, curr);
+			}
+			else{
+				curr->right = new Node(e);
+			}
+		}
+	}
+	
+	bool isNode(Node *n){
+		if(n==nullptr)
+			return false;
+		return true;
 	}
 
 	void pre_order(Node* n){
@@ -107,7 +133,7 @@ public:
 	
 
 	
-private:
+
 	Node* root=nullptr;
 	
 };
