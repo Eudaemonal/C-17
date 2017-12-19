@@ -122,9 +122,6 @@ private:
 		}
 	}
 
-	
-
-	
 
 	Node* root=nullptr;
 	
@@ -142,8 +139,6 @@ int main(){
 	
 	t.print(1);
 	
-
-	
 	int key = 3;
 	if(t.search(key)!=nullptr){
 		std::cout << key << " exist!\n";
@@ -151,6 +146,4 @@ int main(){
 	else{
 		std::cout << key << " not exist!\n";
 	}
-
-	
 }
