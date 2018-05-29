@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/eudaemon/dropbox/project/cpp/wkD201/test01.cpp
+iostream
+-
+vector
+-
+utility
+-
+algorithm
+-
+

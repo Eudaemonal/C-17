@@ -1,0 +1,3 @@
+/Users/eudaemon/dropbox/project/cpp/wkC102/CMakeFiles/rebuild_cache.dir
+/Users/eudaemon/dropbox/project/cpp/wkC102/CMakeFiles/edit_cache.dir
+/Users/eudaemon/dropbox/project/cpp/wkC102/CMakeFiles/test01.dir
